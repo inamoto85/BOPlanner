@@ -1,0 +1,13 @@
+Structure,TorO,Type,limit,Volume,DoseLimit,LimitType,VolType,Priority,PQM_type
+GTVp_D99.9,1,Point,lower,99.9,50.6,D,relative,1,Linear
+CTV_D99.9,1,Point,lower,99.9,41.8,D,relative,1,Linear
+PGTVp_D98,1,Point,lower,98,50.6,D,relative,1,Linear
+PTV_D98,1,Point,lower,98,41.8,D,relative,1,Linear
+PGTVp_D002,1,Point,upper,2,55.154,D,relative,1,Linear
+FemoralHead_V020,0,Point,upper,50,20,V,relative,3,Linear
+FemoralHead_V030,0,Point,upper,20,30,V,relative,3,Linear
+Urinary Bladder_V025,0,Point,upper,50,25,V,relative,2,Linear
+Urinary Bladder_V045,0,Point,upper,20,45,V,relative,2,Linear
+Urinary Bladder_Mean,0,Mean,upper,,18,D,relative,2,Linear
+PTV_R50,0,Spill,upper,50,4.5,D,relative,2,Linear
+PTV_R90,0,Spill,upper,90,1.5,D,relative,2,Linear

@@ -1,0 +1,18 @@
+Structure,Type,limit,Volume,DoseLimit,Priority,LimitType
+BODY_D000,Point,upper,0,53.13,1000,D
+CTV_D100,Point,lower,100,43.5,400,D
+PTV_D100,Point,lower,100,42.8,380,D
+PGTVp_D100,Point,lower,100,51.5,350,D
+GTVp_D100,Point,lower,100,52,400,D
+Irrad Volume_D000,Point,upper,0,45,300,D
+Irrad Volume_D100,Point,lower,100,43,300,D
+Avoidance_D000,Point,upper,0,40,250,D
+Avoidance_Mean,Mean,upper,,16,250,D
+FemoralHead_Mean,Mean,upper,,9.5,250,D
+FemoralHead_D000,Point,upper,0,50,250,D
+FemoralHead_D040,Point,upper,40,10,250,D
+FemoralHead_D025,Point,upper,25,15,250,D
+Urinary Bladder_Mean,Mean,upper,,17,250,D
+Urinary Bladder_D000,Point,upper,0,50,250,D
+Urinary Bladder_D040,Point,upper,40,15,250,D
+Urinary Bladder_D015,Point,upper,15,30,250,D

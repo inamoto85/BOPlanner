@@ -1,0 +1,14 @@
+GTVp_D100_DoseLimit <= BODY_D000_DoseLimit
+Irrad_Volume_D000_DoseLimit <= BODY_D000_DoseLimit
+PTV_D100_DoseLimit <= CTV_D100_DoseLimit
+PGTVp_D100_DoseLimit <= BODY_D000_DoseLimit
+Avoidance_Mean_DoseLimit <= Avoidance_D000_DoseLimit
+FemoralHead_D000_DoseLimit <= BODY_D000_DoseLimit
+FemoralHead_Mean_DoseLimit <= FemoralHead_D000_DoseLimit
+FemoralHead_D025_DoseLimit <= FemoralHead_D000_DoseLimit
+FemoralHead_D040_DoseLimit <= FemoralHead_D000_DoseLimit
+Urinary_Bladder_D000_DoseLimit <= BODY_D000_DoseLimit
+Urinary_Bladder_Mean_DoseLimit <= Urinary_Bladder_D000_DoseLimit
+Urinary_Bladder_D015_DoseLimit <= Urinary_Bladder_D000_DoseLimit
+Urinary_Bladder_D040_DoseLimit <= Urinary_Bladder_D000_DoseLimit
+Urinary_Bladder_D040_DoseLimit <= Urinary_Bladder_D015_DoseLimit

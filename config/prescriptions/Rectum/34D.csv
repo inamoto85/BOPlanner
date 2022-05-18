@@ -1,0 +1,18 @@
+Structure,Type,limit,Volume,DoseLimit,Priority,LimitType
+BODY_D000,Point,upper,0,"[50.6,53.13]","[100,1000]",D
+CTV_D100,Point,lower,100,"[41.8,43.89]","[100,1000]",D
+PTV_D100,Point,lower,100,"[41.8,43.89]","[100,1000]",D
+PGTVp_D100,Point,lower,100,"[50.6,53.13]","[100,1000]",D
+GTVp_D100,Point,lower,100,"[50.6,53.13]","[100,1000]",D
+Irrad Volume_D000,Point,upper,0,"[44.65,49.35]","[100,1000]",D
+Irrad Volume_D100,Point,lower,100,"[40.85,45.15]","[100,1000]",D
+Avoidance_D000,Point,upper,0,"[1,45]","[100,1000]",D
+Avoidance_Mean,Mean,upper,,"[1,20]","[100,1000]",D
+FemoralHead_Mean,Mean,upper,,"[1,15]","[100,1000]",D
+FemoralHead_D000,Point,upper,0,"[1,50]","[100,1000]",D
+FemoralHead_D040,Point,upper,40,"[1,20]","[100,1000]",D
+FemoralHead_D025,Point,upper,25,"[1,20]","[100,1000]",D
+Urinary Bladder_Mean,Mean,upper,,"[1,20]","[100,1000]",D
+Urinary Bladder_D000,Point,upper,0,"[1,50]","[100,1000]",D
+Urinary Bladder_D040,Point,upper,40,"[1,25]","[100,1000]",D
+Urinary Bladder_D015,Point,upper,15,"[1,40]","[100,1000]",D

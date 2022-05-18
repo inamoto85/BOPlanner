@@ -1,0 +1,16 @@
+{
+    "exclude": [
+        "**/__pycache__"
+    ],
+    "ignore": ["**/__pycache__"],
+    "include": [
+        "bo_planner"
+    ],
+    "executionEnvironments": [
+        {"root": "bo_planner"}
+    ],
+    "reportPrivateImportUsage": false,
+    "reportMissingImports": true,
+    "pythonVersion": "3.9"
+
+}
