@@ -1,4 +1,4 @@
-# bo_planner
+# BOPlanner
  This repository contains the company code with the preprint: "High-dimensional Automated Radiation Therapy Treatment Planning via Bayesian Optimization". The code serves to perform automated hyperparameter tuning for IMRT treatment planning.The implemented automated framework was integrated with Eclipse TPS for FMO, leaf sequencing and dose calculation. Tested with Eclipse 15.6 and 16.1. 
  
 ### Requirements
