@@ -18,7 +18,7 @@ Tested with the Eclipse TPS 15.6 and 16.1.
 - Constraints: in order for the planning parameters to be valid and meaningful, constraints need to be added, which only exist for DoseLimit. The format of constraints can refer to [Objective constraints](/config/prescriptions/Rectum/rectum_constraint.txt).
 
 ### Run BOPlanner
- [tutorial_for_BOPlanner.ipynb](tutorial_for_BOPlanner) shows how to use BOPlanner and results of BOPlanner.
+ [tutorial_for_BOPlanner.ipynb](tutorial_for_BOPlanner.ipynb) shows how to use BOPlanner and results of BOPlanner.
 
 ## Acknowledgement:
 
