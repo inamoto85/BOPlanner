@@ -9,6 +9,11 @@ Tested with the Eclipse TPS 15.6 and 16.1.
 - [/results/](results) contains data and script reproducing figures in the manuscript.
 - [/config/](/config/) configuration files defining the treatment planning [environment](/config/env_config.json), [clinical goals](/config/PQM/), and [planning parameters](/config/prescriptions/)(i.e. search space). [Objective constraints](/config/prescriptions/Rectum/rectum_constraint.txt) can be defined to limit the search space.
 
+## Requirements 
+You need Python 3.7.3 or later to run BOPlanner.
+
+The required Python dependencies are in [requirements.txt](requirements.txt).
+
 ## Getting Started
 ### Define plan quality metrics (PQM)
  Clinical goals are saved in a CSV file as PQM with Structure, Type, Volume, Doselimit, LimitType, Priority, etc. The types of PQM include, min/max dose, mean dose, dose-volume parameters, and dose spillage (R<sub>50%</sub>, R<sub>90%</sub>). PQM grouped the clinical goals into several tiers indexed by Priority where lower tiers, such as 1, have greater importance. 
