@@ -1,4 +1,5 @@
 import atexit
+import os
 import csv
 import time
 import numpy as np
@@ -78,6 +79,10 @@ def main(n_batch, patient_id=None,
     opt_runner = OptRunner(opt_simulator)
     opt_prefix = "./opt_res/{}".format(patient_id) + opt_dir
     dvh_prefix = "./opt_res/{}".format(patient_id) + dvh_dir
+    if not os.path.exists(opt_prefix):
+        os.makedirs(opt_prefix)
+    if not os.path.exists(dvh_prefix):
+        os.makedirs(dvh_prefix)        
     save_data = DataStorage(opt_prefix, dvh_prefix, p_dict)  # data storage
     pars_random = []
 
