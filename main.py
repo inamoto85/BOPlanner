@@ -1,4 +1,5 @@
 import atexit
+import os
 import csv
 import time
 import numpy as np
@@ -29,7 +30,7 @@ def main(n_batch, patient_id=None,
          goal_fn="./config/PQM/Rectum/PQM.csv",
          obj_fn="./config/prescriptions/Rectum/34D.csv",
          const_fn = "./config/prescriptions/Rectum/rectum_constraint.txt",
-         n_init=2,
+         n_init=1,
          batch_size=3,
          opt_dir=None,
          dvh_dir=None,
@@ -78,6 +79,10 @@ def main(n_batch, patient_id=None,
     opt_runner = OptRunner(opt_simulator)
     opt_prefix = "./opt_res/{}".format(patient_id) + opt_dir
     dvh_prefix = "./opt_res/{}".format(patient_id) + dvh_dir
+    if not os.path.exists(opt_prefix):
+        os.makedirs(opt_prefix)
+    if not os.path.exists(dvh_prefix):
+        os.makedirs(dvh_prefix)        
     save_data = DataStorage(opt_prefix, dvh_prefix, p_dict)  # data storage
     pars_random = []
 
@@ -137,12 +142,12 @@ def main(n_batch, patient_id=None,
 
     best_params, arm_name = utils.extract_best_params(data, experiment)
     # last step: dose calculation and re-optimization with the best params
-    data = utils.calculate_plan(experiment, arm_name, best_params, data)
+    data, trial = utils.calculate_plan(experiment, arm_name, best_params, data)
     save_data.save_cal_data(data, best_params)
     save_data.save_dvh(trial.arms, 'reopt-cal1')
 
     # reopt with calculated dose
-    data = utils.reopt_calculated_plan(experiment, best_params, data)
+    data, trial = utils.reopt_calculated_plan(experiment, best_params, data)
     save_data.save_cal_data(data, best_params)
     save_data.close_pars_file()
     save_data.save_dvh(trial.arms, 'reopt-cal2')
@@ -160,7 +165,7 @@ if __name__ == "__main__":
         print(pa + ' sobol is ok !')
         main(n_batch=2, patient_id=pa, plan_id="test", model_select='GPEI', opt_dir="/util_gpei/", dvh_dir="/dvh_gpei/")
         print(pa + ' gpei is ok !')
-        main(n_batch=2, patient_id=pa, plan_id="saasbo", model_select='FULLYBAYESIAN', opt_dir="/util_saas/", dvh_dir="/dvh_saas/")
+        main(n_batch=2, patient_id=pa, plan_id="test", model_select='FULLYBAYESIAN', opt_dir="/util_saas/", dvh_dir="/dvh_saas/")
         print(pa + " saasbo is ok !")
 
 

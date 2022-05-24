@@ -40,7 +40,7 @@ def calculate_plan(experiment, arm_name, params, data):
     trial = experiment.new_trial(generator_run=GeneratorRun(arms=[Arm(parameters=params)])).run()
     trial.complete()
     data = Data.from_multiple_data([data, trial.fetch_data()])
-    return data
+    return data, trial
 
 def reopt_calculated_plan(experiment, best_params, data):
     """re-optimize plan based on previous calculated intermediate dose
@@ -58,4 +58,4 @@ def reopt_calculated_plan(experiment, best_params, data):
     trial = experiment.new_trial(generator_run=GeneratorRun(arms=[Arm(parameters=best_params)])).run()
     trial.complete()
     data = Data.from_multiple_data([data, trial.fetch_data()])
-    return data
+    return data, trial
