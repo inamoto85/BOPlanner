@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def init_data(patient_id: str, n_init: int, mode="file", file="pars.csv"):
+def init_data(patient_id: str, n_init: int, mode="file", file="/util_sobol/pars.csv"):
     """data initialization for the BO procedure
     Args:
         patient_id: str,
