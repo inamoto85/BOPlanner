@@ -81,7 +81,7 @@ def main(patient_id=None,
     plan.SetCalculationOption(config["OA"], "UseGPU", "Yes")
 
     # initial for N-M
-    init_x, init_utility = init_data(pa, n_init)
+    init_x, init_utility = init_data(patient_id, n_init)
 
     # PQM
     plan_quality = PlanQualityMetric(patient_id, plan, struct_roi, goal_df, p_dict, f_dict, opt_prefix, dvh_prefix)
