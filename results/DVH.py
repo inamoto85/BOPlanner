@@ -4,9 +4,46 @@ import pandas as pd
 import matplotlib; matplotlib.use('TkAgg')
 from matplotlib.pyplot import MultipleLocator
 
+def sketchDVH(dvhpath, DVH_items):
+    color = ['purple', 'yellow', 'violet', 'green', 'red', 'blue', 'darkorange']
+    items = ['PGTVp', 'GTVp', 'PTV', 'CTV', 'FemoralHead', 'Urinary Bladder', 'BODY']
+    dvh_dict = {}
+    dvh_csv = pd.read_csv(dvhpath, index_col=0)
+    for i in items:
+        dose = list(dvh_csv.loc[i + '_Dose'])
+        dose = [float(d) for d in dose]
+        volume = list(dvh_csv.loc[i + '_Volume'])
+        volume = [float(v) for v in volume]
+        dvh_dict[i + '_Dose'] = dose
+        dvh_dict[i + '_Volume'] = volume
 
+    # Unified structure name
+    dvh_dict["PGTV_Dose"] = dvh_dict.pop("PGTVp_Dose")
+    dvh_dict["PGTV_Volume"] = dvh_dict.pop("PGTVp_Volume")
+    dvh_dict["GTV_Dose"] = dvh_dict.pop("GTVp_Dose")
+    dvh_dict["GTV_Volume"] = dvh_dict.pop("GTVp_Volume")
+    dvh_dict["Femoral Head_Dose"] = dvh_dict.pop("FemoralHead_Dose")
+    dvh_dict["Femoral Head_Volume"] = dvh_dict.pop("FemoralHead_Volume")
+    dvh_dict["Bladder_Dose"] = dvh_dict.pop("Urinary Bladder_Dose")
+    dvh_dict["Bladder_Volume"] = dvh_dict.pop("Urinary Bladder_Volume")
+    dvh_dict["Body_Dose"] = dvh_dict.pop("BODY_Dose")
+    dvh_dict["Body_Volume"] = dvh_dict.pop("BODY_Volume")
+    j = 0
+    fig, ax = plt.subplots(figsize=(8, 5))
+    for it in DVH_items:
+        ax.plot(dvh_dict[it + '_Dose'], dvh_dict[it + '_Volume'], color=color[j], label=it)
+        j += 1
+    ax.legend(loc=9, bbox_to_anchor=(0.4, 1), frameon=False, prop={'size': 13})
+    ax.x_major_locator = MultipleLocator(10)
+    ax.xaxis.set_minor_locator(MultipleLocator(2))
+    ax.yaxis.set_minor_locator(MultipleLocator(5))
+    ax.set_title('DVH', fontsize=24)
+    ax.set_ylim(0, 100)
+    ax.set_xlim(0, 61)
+    ax.set_ylabel('Volume (%)', fontsize=18)
+    ax.set_xlabel('Dose (Gy)', fontsize=18)
 
-def SketchBounds(path, savepath, gp_f, saas_f, clin_f, sobol_f, DVH_items):
+def sketchBounds(path, savepath, gp_f, saas_f, clin_f, sobol_f, DVH_items):
     color = ['purple',  'yellow', 'violet',  'green','red', 'blue','darkorange']
     clin_csv = pd.read_csv(path + clin_f)
     clin_df = pd.DataFrame(clin_csv)
@@ -111,5 +148,5 @@ if __name__ == '__main__':
     file_clin = 'Clinical_DVH_bounds.csv'
     file_sobol = 'SOBOL_DVH_bounds.csv'
 
-    SketchBounds(path, savepath, file_gp, file_saas, file_clin, file_sobol, DVH_items)
+    sketchBounds(path, savepath, file_gp, file_saas, file_clin, file_sobol, DVH_items)
 
