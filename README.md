@@ -26,6 +26,10 @@ The required Python dependencies are in [requirements.txt](requirements.txt).
 ### Run BOPlanner
  [tutorial_for_BOPlanner.ipynb](tutorial_for_BOPlanner.ipynb) shows how to use BOPlanner and results of BOPlanner.
 
+
+## Reference
+More details of this work are available in our preprint ["High-dimensional Automated Radiation Therapy Treatment Planning via Bayesian Optimization"](https://arxiv.org/abs/2205.10980) .
+
 ## Acknowledgement:
 
 This work is greatly inspired by the [Raybay](https://github.com/kels271828/RayBay/) project. 
